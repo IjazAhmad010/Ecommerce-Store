@@ -13,6 +13,8 @@ const DashboardPage : React.FC<DashboardPageProps>= async ({
         }
     });
 
+    console.log(store)
+
 
     return (
         <div>
