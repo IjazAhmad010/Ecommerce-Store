@@ -57,6 +57,7 @@ export const SettingsForm: React.FC<SettingsFormProps> =({
 
             
         } catch (error) {
+            console.log('[STORES_PATCH]', error);
             toast.error("Something went wrong.");
         }finally{
             setLoading(false);
