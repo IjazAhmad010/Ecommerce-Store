@@ -29,7 +29,7 @@ export async function PATCH(
                 userId
             },
             data: {
-                name
+                name: body.name
             }
         });
 
