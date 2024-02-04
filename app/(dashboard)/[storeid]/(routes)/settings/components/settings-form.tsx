@@ -21,6 +21,7 @@ import { Form,
 import { Input } from "@/components/ui/input";
 import { AlertModal } from "@/components/modals/alert-modal";
 import { ApiAlert } from "@/components/ui/api-alert";
+import { useOrigin } from "@/hooks/use-origin";
 
 
 
@@ -42,6 +43,7 @@ export const SettingsForm: React.FC<SettingsFormProps> =({
 }) => {
       const params = useParams();
       const router = useRouter();
+      const origin= useOrigin();
       const [open, setOpen]= useState(false);
       const [loading, setLoading]= useState(false);
 
@@ -131,7 +133,10 @@ export const SettingsForm: React.FC<SettingsFormProps> =({
 
              </Form>
              <Separator />
-             <ApiAlert title="test" description="test-desc"/>
+             <ApiAlert 
+             title="NEXT_PUBLIC_API_URL" 
+             description={`${origin}/api/${params.storeId}`}
+             variant="public"/>
         </>
     )
 }
