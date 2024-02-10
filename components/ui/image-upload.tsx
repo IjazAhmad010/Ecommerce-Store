@@ -2,7 +2,8 @@
 
 
 import { useEffect, useState } from "react";
-import { Trash } from "lucide-react";
+import { ImagePlus, Trash } from "lucide-react";
+import {CldUploadWidget} from "next-cloudinary"
 
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
@@ -55,6 +56,25 @@ const ImageUpload: React.FC<ImageUplaodProps> = ({
                        </div>
                 ) )}
             </div>
+            <CldUploadWidget onUpload={onUpload} uploadPreset="ctsjfrb5">
+               {({open})=>{
+                const onClick= () => {
+                    open();
+                }
+                return (
+                    <Button
+                    type="button"
+                    disabled={disabled}
+                    variant="secondary"
+                    onClick={onClick}
+                    >
+
+                        <ImagePlus className="h-4 w-4 mr-2"/>
+                        Uplaod an image
+                    </Button>
+                )
+               }}
+            </CldUploadWidget>
         </div>
     )
 };

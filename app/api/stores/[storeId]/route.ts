@@ -37,7 +37,7 @@ export async function PATCH(
 
     } catch (error) {
 
-        console.log('[store_PATCH]', error)
+        console.log('[STORE_PATCH]', error)
         return new NextResponse("Internal error", {status: 500});
     }
 }
@@ -69,7 +69,7 @@ export async function DELETE (
 
     } catch (error) {
 
-        console.log('[store_DELETE]', error)
+        console.log('[STORE_DELETE]', error)
         return new NextResponse("Internal error", {status: 500});
     }
 }
