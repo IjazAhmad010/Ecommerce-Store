@@ -81,7 +81,7 @@ toast.success(toastMessage);
         setLoading(true)
         await axios.delete(`/api/${params.storeId}/billboards/${params.billboardId}`)
         router.refresh();
-        router.push("/");
+        router.push(`/${params.storeId}/billboards`);
         toast.success("Billboard deleted.");
     } catch (error) {
         toast.error("Make sure you removed all  categories Using this billboard first .");
@@ -158,9 +158,7 @@ toast.success(toastMessage);
                         
             </form>
 
-            </Form>
-            <Separator />
-        
+            </Form>        
     </>
     )
 }
