@@ -20,7 +20,7 @@ export const columns: ColumnDef<ColorColumn>[] = [
   {
     accessorKey: "value",
     header: "Value",
-    cell: ({row}) =>{
+    cell: ({row}) =>(
       <div className="flex items-center gap-x-4">
         {row.original.value}
         <div 
@@ -28,7 +28,7 @@ export const columns: ColumnDef<ColorColumn>[] = [
         style={{backgroundColor : row.original.value}}
         />
       </div>
-    }
+    )
 
   },
   {
